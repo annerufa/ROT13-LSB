@@ -2,9 +2,6 @@ from PIL import Image
 
 
 def enkripsi_rot13(teks):
-    """
-    Melakukan enkripsi ROT13 pada teks
-    """
     hasil = ""
     for karakter in teks:
         if 'a' <= karakter <= 'z':
@@ -16,10 +13,6 @@ def enkripsi_rot13(teks):
     return hasil
 
 def dekripsi_rot13(teks):
-    """
-    Melakukan dekripsi ROT13 pada teks
-    ROT13 adalah cipher simetris, jadi enkripsi = dekripsi
-    """
     return enkripsi_rot13(teks)
 
 
@@ -30,7 +23,6 @@ def embed_pesan_lsb(gambar_input, pesan, gambar_output):
         lebar, tinggi = img.size
         
         pesan_full = enkripsi_rot13(pesan) + "###"
-
         pesan_biner = ''.join(format(ord(c), '08b') for c in pesan_full)
 
         # Jika biner pesan lebih banyak dibanding total channel pada gambar
@@ -70,10 +62,7 @@ def ekstrak_pesan_lsb(gambar_input):
     gambar = gambar.convert('RGB')
 
     pixels = list(gambar.getdata())
-    # 1. LIST UNTUK MENYIMPAN KARAKTER YANG SUDAH DIKONVERSI
     pesan_terekstrak = []
-    
-    # 2. BUFFER UNTUK MENYIMPAN BIT SEBELUM DIKONVERSI KE KARAKTER
     buffer_biner = []
 
     for pixel in pixels: 
