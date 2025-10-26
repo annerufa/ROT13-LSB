@@ -10,7 +10,7 @@ def enkripsi_rot13(teks):
             hasil += chr((ord(karakter) - ord('A') + 13) % 26 + ord('A'))
         else:
             hasil += karakter
-    return hasil
+    return hasil 
 
 def dekripsi_rot13(teks):
     return enkripsi_rot13(teks)
@@ -72,17 +72,13 @@ def ekstrak_pesan_lsb(gambar_input):
 
         # cek jika sudah terkumpul minimal 8 bit
         while len(buffer_biner) >= 8:
-            # Ambil 8 bit pertama dari buffer
             byte = ''.join(buffer_biner[:8])
 
-            # Hapus 8 bit yang sudah diambil dari buffer
             buffer_biner = buffer_biner[8:]
             
-            # Konversi 8 bit menjadi karakter ASCII
             karakter = chr(int(byte, 2))
             pesan_terekstrak.append(karakter)
             
-            # cek jika sudah mencapai akhir pesan
             if len(pesan_terekstrak) >= 3 and ''.join(pesan_terekstrak[-3:]) == "###":
                 pesan_akhir = ''.join(pesan_terekstrak[:-3])
                 return True, dekripsi_rot13(pesan_akhir)
