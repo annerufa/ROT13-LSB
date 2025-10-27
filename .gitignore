@@ -1,0 +1,4 @@
+# Abaikan virtual environment
+.env/
+venv/
+.venv/
