@@ -31,21 +31,21 @@ Sebelum menjalankan aplikasi, pastikan Python sudah terinstal (minimal versi **3
 git clone https://github.com/username/ROT13-LSB.git
 cd ROT13-LSB
 ```
-3. Aktifkan environment
+2. Aktifkan environment
 ```
 python -m venv env
 source env/bin/activate      # di Linux/Mac
 env\Scripts\activate         # di Windows
 ```
-5. Install requirements / library yang dibutuhkan project ini
+3. Install requirements / library yang dibutuhkan project ini
 ```
 pip install -r requirements.txt
 ```
-7. Jalankan aplikasi
+4. Jalankan aplikasi
 ```
 python main.py
 ```
-9. GUI akan terbuka dan menampilkan menu utama seperti berikut 👇
+5. GUI akan terbuka dan menampilkan menu utama seperti berikut 👇
 Kemudian, install library yang dibutuhkan dengan perintah berikut:
     - Tampilan awal program
       <img width="701" height="635" alt="image" src="https://github.com/user-attachments/assets/5cbd83ac-b040-4a88-83a0-af92de7e1fcc" />
